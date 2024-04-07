@@ -10,7 +10,7 @@ function Card({ name, imgUrl }) {
 }
 
 Card.propTypes = {
-  name: PropTypes.number,
+  name: PropTypes.string,
   imgUrl: PropTypes.string,
 };
 
