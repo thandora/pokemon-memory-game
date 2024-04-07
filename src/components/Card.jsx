@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import "../styles/Card.css"
 
 function Card({ name, imgUrl }) {
   return (
-    <div>
+    <div className="pokemon-card">
       <img src={imgUrl} alt={name} />
       <h2>{name}</h2>
     </div>

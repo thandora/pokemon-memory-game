@@ -1,5 +1,14 @@
-header {
-  height: 80px;
-  background-color: black;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #5f5b5b;
+  color: #faebd7;
   width: 100%;
+  padding: 12px 0;
+}
+
+.header h1 {
+  margin: 0;
 }

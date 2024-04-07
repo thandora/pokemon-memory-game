@@ -1,0 +1,12 @@
+.scoreBoard {
+  background-color: antiquewhite;
+  color: black;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scoreBoard p {
+  margin: 0
+}
