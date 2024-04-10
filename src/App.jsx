@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import "./styles/App.css";
 import { Score } from "./components/Score";
 import { CardList } from "./components/CardList";
+import { shuffleArray } from "./utils";
 
 async function getRandomUniquePokemon(n) {
   const pokemonSet = new Set(); // Set to store unique Pokémon
@@ -71,7 +72,7 @@ function App() {
 
       {pokemonList ? (
         <CardList
-          pokemonList={pokemonList}
+          pokemonList={shuffleArray(pokemonList)}
           scoreState={[score, setScore]}
           clickedIdsState={[clickedIds, setClickedIds]}
         />
