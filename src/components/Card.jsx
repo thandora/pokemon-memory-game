@@ -6,19 +6,22 @@ function Card({ pokeId, name, imgUrl, scoreState, clickedIdsState }) {
   const [clickedIds, setClickedIds] = clickedIdsState;
 
   function scoreHandler(id) {
-    return () => {
-      if (!clickedIds.includes(id)) {
-        setClickedIds([...clickedIds, id]);
-        setScore(score + 1);
-      } else {
-        setClickedIds([]);
-        setScore(0);
-      }
-    };
+    if (!clickedIds.includes(id)) {
+      setClickedIds([...clickedIds, id]);
+      setScore(score + 1);
+    } else {
+      setClickedIds([]);
+      setScore(0);
+    }
   }
 
   return (
-    <div className="pokemon-card" onClick={scoreHandler(pokeId)}>
+    <div
+      className="pokemon-card"
+      onClick={() => {
+        scoreHandler(pokeId);
+      }}
+    >
       <img src={imgUrl} alt={name} />
       <h2>{name}</h2>
     </div>
