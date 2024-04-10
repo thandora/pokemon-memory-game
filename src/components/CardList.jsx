@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import "../styles/CardList.css";
-import { useState } from "react";
 import { Card } from "./Card";
 
 function CardList({ pokemonList, scoreState, clickedIdsState }) {
