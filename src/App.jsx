@@ -40,13 +40,23 @@ async function getRandomUniquePokemon(n) {
   }
 }
 
-const pokemonList = await getRandomUniquePokemon(5);
-
 function App() {
+  const [pokemonList, setPokemonList] = useState(null);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [clickedIds, setClickedIds] = useState([]);
 
+  useEffect(() => {
+    async function setter() {
+      setPokemonList(await getRandomUniquePokemon(5));
+    }
+
+    if (!pokemonList) {
+      setter();
+    }
+  }, [pokemonList]);
+
+  // Effect for setting high score
   useEffect(() => {
     if (score > highScore) {
       setHighScore(score);
@@ -59,11 +69,15 @@ function App() {
 
       <Score score={score} highScore={highScore} />
 
-      <CardList
-        pokemonList={pokemonList}
-        scoreState={[score, setScore]}
-        clickedIdsState={[clickedIds, setClickedIds]}
-      />
+      {pokemonList ? (
+        <CardList
+          pokemonList={pokemonList}
+          scoreState={[score, setScore]}
+          clickedIdsState={[clickedIds, setClickedIds]}
+        />
+      ) : (
+        "loading"
+      )}
     </>
   );
 }
