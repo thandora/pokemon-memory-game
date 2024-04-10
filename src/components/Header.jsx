@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="header">
       <h1>Pokemon Memory Game</h1>
-      <p>Try for the best score by selecting the pokemon that you havent selected before!</p>
+      <p>Aim for the best score by selecting the pokemon that you havent selected before!</p>
     </div>
   );
 }
