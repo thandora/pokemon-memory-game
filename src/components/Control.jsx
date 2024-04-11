@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "../styles/Score.css";
 
-function Score({ score, highScore }) {
+function Control({ score, highScore }) {
   return (
     <div className="scoreBoard">
       <p>Highscore: {highScore}</p>
@@ -10,9 +10,9 @@ function Score({ score, highScore }) {
   );
 }
 
-Score.propTypes = {
+Control.propTypes = {
   score: PropTypes.number,
   highScore: PropTypes.number,
 };
 
-export { Score };
+export { Control };
