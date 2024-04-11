@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import "./styles/App.css";
-import { Score } from "./components/Score";
+import { Control } from "./components/Control";
 import { CardList } from "./components/CardList";
 import { shuffleArray } from "./utils";
 
@@ -68,13 +68,14 @@ function App() {
     <>
       <Header />
 
-      <Score score={score} highScore={highScore} />
+      <Control score={score} highScore={highScore} setPokemonList={setPokemonList} />
 
       {pokemonList ? (
         <CardList
           pokemonList={shuffleArray(pokemonList)}
           scoreState={[score, setScore]}
           clickedIdsState={[clickedIds, setClickedIds]}
+          
         />
       ) : (
         "loading"

@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
-import "../styles/Score.css";
+import "../styles/Control.css";
 
-function Control({ score, highScore }) {
+function Control({ score, highScore, setPokemonList }) {
   return (
     <div className="scoreBoard">
-      <p>Highscore: {highScore}</p>
-      <p>Score: {score}</p>
+      <div>
+        <p>Highscore: {highScore}</p>
+        <p>Score: {score}</p>
+      </div>
     </div>
   );
 }
@@ -13,6 +15,7 @@ function Control({ score, highScore }) {
 Control.propTypes = {
   score: PropTypes.number,
   highScore: PropTypes.number,
+  setPokemonList: PropTypes.func,
 };
 
 export { Control };
