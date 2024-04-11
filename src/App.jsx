@@ -68,14 +68,18 @@ function App() {
     <>
       <Header />
 
-      <Control score={score} highScore={highScore} setPokemonList={setPokemonList} />
+      <Control
+        score={score}
+        highScore={highScore}
+        setPokemonList={setPokemonList}
+        setScore={setScore}
+      />
 
       {pokemonList ? (
         <CardList
           pokemonList={shuffleArray(pokemonList)}
           scoreState={[score, setScore]}
           clickedIdsState={[clickedIds, setClickedIds]}
-          
         />
       ) : (
         "loading"
